@@ -1,13 +1,15 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./components/NavBar.js";
+import ItemListContainer from "./components/ItemListContainer";
 
 
 function App() {
   return(
-  <div>
+  <>
       <Navbar />
-  </div>
+      <ItemListContainer Pregunta={"¿Querés comprar un mate?"} />
+  </>
   )
 }
 
