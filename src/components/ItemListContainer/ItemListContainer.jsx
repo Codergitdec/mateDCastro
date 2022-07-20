@@ -8,10 +8,11 @@ const ItemListContainer = () => {
   const promise = new Promise((resolve) => {
     setTimeout(() => resolve(data), 2000);
   });
-
+  
   useEffect(() => {
     promise.then((res) => setItems(data));
-  }, []);
+  },[]);
+
   return (
     <>
       <div className="mt-5">
