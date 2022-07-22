@@ -6,13 +6,17 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemCount from "./components/ItemCount/ItemCount";
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 function App() {
   return(
 
 <>
       <BrowserRouter>
         <Navbar />
+<div>
+ <Link to={"category/Metal"}>Categoria Metal</Link>
 
+</div>
         <Routes>
          
           <Route index element={<ItemListContainer />} />
