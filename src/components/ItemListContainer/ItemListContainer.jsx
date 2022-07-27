@@ -1,17 +1,25 @@
-
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import data from "../database/data.json";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
+  const { name } = useParams();
   const [items, setItems] = useState([]);
   const promise = new Promise((resolve) => {
     setTimeout(() => resolve(data), 2000);
   });
  
   useEffect(() => {
-    promise.then((res) => setItems(data));
-  },[]);
+    promise.then((res) => {
+      const products = res;
+      if (name) {
+      setItems(products.filter((product) => product.category == name));
+    } else {
+    setItems(products);
+  }
+});
+  },[name]);
   
   return (
     <>

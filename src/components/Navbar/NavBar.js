@@ -1,3 +1,4 @@
+
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
@@ -12,22 +13,22 @@ const Navbar = () => {
   <div className="collapse navbar-collapse" id="navbarNavDropdown">
     <ul className="navbar-nav">
       <li className="nav-item active">
-      <Link className="nav-link" to="category/Madera">Categoria <span className="sr-only">(Madera)</span></Link>
+      <Link className="nav-link" to="/">Home </Link>
       </li>
       <li className="nav-item">
-      <Link className="nav-link" to="/">Modelos</Link>
+      <Link className="nav-link item" to="/"> Quienes Somos </Link>
       </li>
       <li className="nav-item">
-      <Link className="nav-link" to="/">Precios</Link>
+      <Link className="nav-link" to="/">Login</Link>
       </li>
       <li className="nav-item dropdown">
-      <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Materiales
+      <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Categorías
           </Link>
         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <Link className="dropdown-item" to="/">Madera</Link>
-          <Link className="dropdown-item" to="/">Cerámica</Link>
-          <Link className="dropdown-item" to="/">Metal</Link>
+        <Link className="dropdown-item" to="/category/Madera">Madera</Link>
+          <Link className="dropdown-item" to="/category/Ceramica">Cerámica</Link>
+          <Link className="dropdown-item" to="/category/Metal">Metal</Link>
         </div>
       </li>
     </ul>
@@ -36,4 +37,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;
