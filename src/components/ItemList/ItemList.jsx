@@ -1,6 +1,5 @@
 import Item from "../Item/Item.jsx";
 
-
 const ItemList = ({ items }) => {
   return (
     <div className="container">
