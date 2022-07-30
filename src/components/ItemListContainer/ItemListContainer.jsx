@@ -6,15 +6,15 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = () => {
   const { name } = useParams();
   const [items, setItems] = useState([]);
-  const promise = new Promise((resolve) => {
-    setTimeout(() => resolve(data), 2000);
-  });
- 
+  
   useEffect(() => {
+    const promise = new Promise((resolve) => {
+      setTimeout(() => resolve(data), 2000);
+    });
     promise.then((res) => {
       const products = res;
       if (name) {
-      setItems(products.filter((product) => product.category == name));
+      setItems(products.filter((product) => parseInt(product.category) === parseInt(name)));
     } else {
     setItems(products);
   }

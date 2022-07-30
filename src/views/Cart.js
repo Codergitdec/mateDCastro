@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/useContext";
 
 const Cart = () => {
-const { items, addItem } = useContext(CartContext);
+const { items } = useContext(CartContext);
 
 return (
     <div>
