@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-      const ItemCount = ({ item, initial, stock, addItem }) => {
+      const ItemCount = ({ item, initial, stock, onAdd }) => {
     const [count, setCount] = useState(initial);
 
     const sumacount = () => {
@@ -17,24 +17,16 @@ import { useState } from 'react';
 
   return (
     <>
-    <div className="ui three buttons">
-      <div className="ui basic red button" onClick={restacount}>-</div>
-      <div className="ui basic button">{count}</div>
-      <div className="ui basic green button" onClick={sumacount}>+</div>
+      <div className="ui three buttons">
+        <div className="ui basic red button" onClick={restacount}>-</div>
+        <div className="ui basic button">{count}</div>
+        <div className="ui basic green button" onClick={sumacount}>+</div>
       </div>
-      {
-        count > 0 ?
-        <div className="ui bottom attached button" onClick={() => addItem({item, count})}>
-          <i className="cart icon"></i>
+      <div className= {count > 0 ? "ui bottom attached button" : "ui bottom attached button disabled"} onClick={() => onAdd(item, count)}> {/* Mira los cambios en la funcion */}
+          <i className="cart icon" />
           Sumar al carrito
-          </div>
-          :
-          <div className="ui bottom attached button disabled">
-          <i className="cart icon"></i>
-          Sumar al carrito
-          </div>
-      }
-      </>
+      </div>
+    </>
   )
     }
 
